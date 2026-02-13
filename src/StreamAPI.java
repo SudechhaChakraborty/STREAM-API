@@ -77,5 +77,14 @@ public class StreamAPI {
 
         System.out.println("All numbers even? " + allEven);
         System.out.println("Any number even? " + anyEven);
+        System.out.println();
+
+        // UC 2.9 - sorted
+        System.out.println("UC 2.9 - sorted:");
+        List<Integer> sortedList = numbers.stream()
+                .sorted()
+                .collect(Collectors.toList());
+
+        System.out.println(sortedList);
     }
 }
