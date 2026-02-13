@@ -46,13 +46,24 @@ public class StreamAPI {
 
         // UC 2.6 - min and max
         System.out.println("UC 2.6 - min and max:");
-        Optional<Integer> min = numbers.stream()
-                .min(Integer::compareTo);
-
-        Optional<Integer> max = numbers.stream()
-                .max(Integer::compareTo);
-
+        Optional<Integer> min = numbers.stream().min(Integer::compareTo);
+        Optional<Integer> max = numbers.stream().max(Integer::compareTo);
         System.out.println("Minimum: " + min.get());
         System.out.println("Maximum: " + max.get());
+        System.out.println();
+
+        // UC 2.7 - sum and average
+        System.out.println("UC 2.7 - sum and average:");
+        int sum = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+
+        double average = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
     }
 }
