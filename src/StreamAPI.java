@@ -21,11 +21,19 @@ public class StreamAPI {
         System.out.println(doubled);
         System.out.println();
 
-        // UC 2.3 - collect original stream into new List
-        System.out.println("UC 2.3 - collect into new list:");
+        // UC 2.3 - collect into new list
+        System.out.println("UC 2.3 - collect:");
         List<Integer> collectedList = numbers.stream()
                 .collect(Collectors.toList());
-
         System.out.println(collectedList);
+        System.out.println();
+
+        // UC 2.4 - filter even numbers
+        System.out.println("UC 2.4 - filter (even numbers):");
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+
+        System.out.println(evenNumbers);
     }
 }
