@@ -41,7 +41,18 @@ public class StreamAPI {
         Optional<Integer> firstEven = numbers.stream()
                 .filter(n -> n % 2 == 0)
                 .findFirst();
-
         firstEven.ifPresent(System.out::println);
+        System.out.println();
+
+        // UC 2.6 - min and max
+        System.out.println("UC 2.6 - min and max:");
+        Optional<Integer> min = numbers.stream()
+                .min(Integer::compareTo);
+
+        Optional<Integer> max = numbers.stream()
+                .max(Integer::compareTo);
+
+        System.out.println("Minimum: " + min.get());
+        System.out.println("Maximum: " + max.get());
     }
 }
