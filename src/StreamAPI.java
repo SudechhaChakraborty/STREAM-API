@@ -65,5 +65,17 @@ public class StreamAPI {
 
         System.out.println("Sum: " + sum);
         System.out.println("Average: " + average);
+        System.out.println();
+
+        // UC 2.8 - allMatch & anyMatch
+        System.out.println("UC 2.8 - allMatch & anyMatch:");
+        boolean allEven = numbers.stream()
+                .allMatch(n -> n % 2 == 0);
+
+        boolean anyEven = numbers.stream()
+                .anyMatch(n -> n % 2 == 0);
+
+        System.out.println("All numbers even? " + allEven);
+        System.out.println("Any number even? " + anyEven);
     }
 }
