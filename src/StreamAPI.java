@@ -13,7 +13,7 @@ public class StreamAPI {
                 .forEach(n -> System.out.print(n + " "));
         System.out.println("\n");
 
-        // UC 2.2 - map (double values)
+        // UC 2.2 - map
         System.out.println("UC 2.2 - map (double values):");
         List<Integer> doubled = numbers.stream()
                 .map(n -> n * 2)
@@ -21,7 +21,7 @@ public class StreamAPI {
         System.out.println(doubled);
         System.out.println();
 
-        // UC 2.3 - collect into new list
+        // UC 2.3 - collect
         System.out.println("UC 2.3 - collect:");
         List<Integer> collectedList = numbers.stream()
                 .collect(Collectors.toList());
@@ -33,7 +33,15 @@ public class StreamAPI {
         List<Integer> evenNumbers = numbers.stream()
                 .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
-
         System.out.println(evenNumbers);
+        System.out.println();
+
+        // UC 2.5 - findFirst even number
+        System.out.println("UC 2.5 - findFirst (first even number):");
+        Optional<Integer> firstEven = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .findFirst();
+
+        firstEven.ifPresent(System.out::println);
     }
 }
