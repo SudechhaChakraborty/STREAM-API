@@ -13,12 +13,19 @@ public class StreamAPI {
                 .forEach(n -> System.out.print(n + " "));
         System.out.println("\n");
 
-        // UC 2.2 - map (double each element)
+        // UC 2.2 - map (double values)
         System.out.println("UC 2.2 - map (double values):");
         List<Integer> doubled = numbers.stream()
                 .map(n -> n * 2)
                 .collect(Collectors.toList());
-
         System.out.println(doubled);
+        System.out.println();
+
+        // UC 2.3 - collect original stream into new List
+        System.out.println("UC 2.3 - collect into new list:");
+        List<Integer> collectedList = numbers.stream()
+                .collect(Collectors.toList());
+
+        System.out.println(collectedList);
     }
 }
